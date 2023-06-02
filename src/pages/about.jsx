@@ -36,7 +36,7 @@ function About() {
                 browsing our available pets or contacting our team for more
                 information. Together, let's give every pet the chance to
                 experience a life filled with wiggles and purrs!
-                <br /> <br />{" "}
+                <br /> <br />
               </p>
               {/* <div className="social-share">
                 <h3>Join us on Linkedin!</h3>
