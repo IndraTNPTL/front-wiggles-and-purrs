@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,126 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+/* LOGIN PAGE */
+.login {
+  /* This can be useful for creating responsive designs where you want an element to 
+    fill most of the screen but leave some space at the bottom.*/
+  height: calc(105vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(251, 242, 225);
+  /* background: linear-gradient(
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url("../../assets/loginPic.png");
+    background-size: cover; */
 }
+
+.loginTitle {
+  font-size: 50px;
+}
+
+.loginForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm > label {
+  margin: 10px 0;
+}
+
+.loginInput {
+  padding: 10px;
+  background-color: white;
+  border: none;
+}
+
+.loginButton {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: rgb(237, 193, 193);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.loginRegisterButton {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: rgb(192, 197, 255);
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+}
+
+/* SIGNUP PAGE */
+.register {
+  /* This can be useful for creating responsive designs where you want an element to 
+    fill most of the screen but leave some space at the bottom.*/
+  height: calc(105vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(251, 242, 225);
+  /* background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("../../assets/pug.jpeg");
+  background-size: cover; */
+}
+
+.registerTitle {
+  font-size: 50px;
+}
+
+.registerForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.registerForm > label {
+  margin: 10px 0;
+}
+
+.registerInput {
+  padding: 10px;
+  background-color: white;
+  border: none;
+}
+
+.registerButton {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: rgb(192, 197, 255);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.registerLoginButton {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: rgb(237, 193, 193);
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+}
+
+/* ABOUT PAGE */
