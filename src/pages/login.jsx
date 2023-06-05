@@ -11,6 +11,7 @@ function Login({ handleSubmit }) {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState("");
 
+	console.log("TEST");
 	return (
 		<div className="content-page-container">
 			<div className="nav-btns">

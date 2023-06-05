@@ -6,6 +6,8 @@ import backArrow from "../assets/icons8-back-arrow.png";
 import catty from "../assets/Cat.png";
 
 function Signup() {
+	console.log("TEST");
+
 	return (
 		<div className="content-page-container">
 			<div className="nav-btns">
