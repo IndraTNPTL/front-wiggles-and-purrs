@@ -25,24 +25,24 @@ function Signup() {
 
 			<h1>🐾 Welcome</h1>
 
-			<form className="loginForm">
+			<form className="landingForm">
 				<label>Your Username</label>
 				<input
 					type="text"
-					className="loginInput"
+					className="landingInput"
 					placeholder="Enter your username..."
 				/>
 
 				<label>Email</label>
 				<input
 					type="text"
-					className="loginInput"
+					className="landingInput"
 					placeholder="Enter your email..."
 				/>
 				<label>Password</label>
 				<input
 					type="password"
-					className="loginInput"
+					className="landingInput"
 					placeholder="Enter your password..."
 				/>
 				<button className="btn-signup" type="submit">
@@ -50,7 +50,7 @@ function Signup() {
 				</button>
 			</form>
 			<div>
-				<img className="puggy" src={catty} alt="cat" />
+				<img className="landing_pet" src={catty} alt="cat" />
 			</div>
 		</div>
 	);

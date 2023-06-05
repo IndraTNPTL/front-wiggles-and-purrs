@@ -167,19 +167,15 @@ button {
 	font-weight: 700;
 }
 
-/* !LOGIN PAGE */
+/* !LOGIN & SIGNUP FORMS CSS */
 
-.loginTitle {
-	font-size: 50px;
-}
-
-.loginForm {
+.landingForm {
 	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
 }
 
-.loginInput {
+.landingInput {
 	padding: 1em;
 	margin-bottom: 2em;
 	background-color: white;
@@ -188,11 +184,11 @@ button {
 	border: none;
 }
 
-.loginInput::placeholder {
+.landingInput::placeholder {
 	font-family: "Poppins", sans-serif;
 }
 
-.loginButton {
+.landingButton {
 	margin-top: 20px;
 	cursor: pointer;
 	background-color: rgb(237, 193, 193);
@@ -202,7 +198,7 @@ button {
 	padding: 10px;
 }
 
-.loginRegisterButton {
+.landingRegisterButton {
 	top: 60px;
 	right: 20px;
 	background-color: rgb(192, 197, 255);
@@ -220,71 +216,9 @@ label {
 	margin: 10px 0;
 }
 
-.puggy {
+.landing_pet {
 	width: 16em;
 }
-
-/* !SIGNUP PAGE */
-.register {
-	/* This can be useful for creating responsive designs where you want an element to 
-    fill most of the screen but leave some space at the bottom.*/
-	height: calc(105vh - 50px);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: rgb(251, 242, 225);
-	/* background: linear-gradient(
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.7)
-    ),
-    url("../../assets/pug.jpeg");
-  background-size: cover; */
-}
-
-.registerTitle {
-	font-size: 50px;
-}
-
-.registerForm {
-	margin-top: 20px;
-	display: flex;
-	flex-direction: column;
-}
-
-.registerForm > label {
-	margin: 10px 0;
-}
-
-.registerInput {
-	padding: 10px;
-	background-color: white;
-	border: none;
-}
-
-.registerButton {
-	margin-top: 20px;
-	cursor: pointer;
-	background-color: rgb(192, 197, 255);
-	border: none;
-	color: white;
-	border-radius: 10px;
-	padding: 10px;
-}
-
-.registerLoginButton {
-	position: absolute;
-	top: 60px;
-	right: 20px;
-	background-color: rgb(237, 193, 193);
-	cursor: pointer;
-	border: none;
-	border-radius: 10px;
-	color: white;
-	padding: 10px;
-}
-
-/* !ABOUT PAGE */
 
 /* !FILTER COMPONENT */
 #filter-popup {
