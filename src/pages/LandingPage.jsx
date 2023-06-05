@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import landingPimg from "../Assets/Adopt_a_pet_3.png";
+import landingPimg from "../assets/Adopt_a_pet_3.png";
 
 function LandingPage() {
 	return (

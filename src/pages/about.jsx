@@ -1,5 +1,5 @@
 import aboutImg from "../assets/pug.jpeg";
-// import linkedinLogo from "../Assets/linkedin-logo-linkedin-icon-transparent-free-png.webp";
+// import linkedinLogo from "../assets/linkedin-logo-linkedin-icon-transparent-free-png.webp";
 
 import { useEffect } from "react";
 
