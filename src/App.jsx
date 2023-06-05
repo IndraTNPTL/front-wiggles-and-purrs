@@ -5,10 +5,10 @@ import { useState } from "react";
 // Hello
 // IMPORT PAGES
 import LandingPage from "./pages/LandingPage";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Signup from "./pages/signup";
+import Login from "./pages/login";
 import PageList from "./pages/PageList";
-import About from "./pages/About";
+import About from "./pages/about";
 import FoundAPetForm from "./pages/FoundAPetForm";
 
 // IMPORT components
