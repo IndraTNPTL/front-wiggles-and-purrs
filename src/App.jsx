@@ -4,12 +4,12 @@ import { useState } from "react";
 
 // Hello
 // IMPORT PAGES
-import LandingPage from "./Pages/LandingPage";
-import Signup from "./Pages/Signup";
-import Login from "./Pages/Login";
-import PageList from "./Pages/PageList";
-import About from "./Pages/About";
-import FoundAPetForm from "./Pages/FoundAPetForm";
+import LandingPage from "./pages/LandingPage";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import PageList from "./pages/PageList";
+import About from "./pages/About";
+import FoundAPetForm from "./pages/FoundAPetForm";
 
 // IMPORT COMPONENTS
 import Footer from "./Components/Footer";
@@ -49,7 +49,7 @@ function App() {
 					/>
 					<Route path="/pets" element={<PageList />} />
 					<Route path="/found-a-pet" element={<FoundAPetForm />} />
-					<Route path="/About" element={<About />} />
+					<Route path="/about" element={<About />} />
 				</Route>
 			</Routes>
 		</>
