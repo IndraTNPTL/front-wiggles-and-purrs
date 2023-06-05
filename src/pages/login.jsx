@@ -2,8 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import backArrow from "../Assets/icons8-back-arrow.png";
-import puggy from "../Assets/pug.png";
+import backArrow from "../assets/icons8-back-arrow.png";
+import puggy from "../assets/pug.png";
 
 function Login({ handleSubmit }) {
 	const [email, setEmail] = useState("");
