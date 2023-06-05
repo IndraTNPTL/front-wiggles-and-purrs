@@ -29,18 +29,18 @@ function Login({ handleSubmit }) {
 
 			<h1>Hello back 🐾</h1>
 
-			<form className="loginForm" onSubmit={handleSubmit}>
+			<form className="landingForm" onSubmit={handleSubmit}>
 				<label>Your Email</label>
 				<input
 					type="text"
-					className="loginInput"
+					className="landingInput"
 					placeholder="Enter your email..."
 				/>
 
 				<label>Your Password</label>
 				<input
 					type="password"
-					className="loginInput"
+					className="landingInput"
 					placeholder="Enter your password..."
 				/>
 
@@ -49,7 +49,7 @@ function Login({ handleSubmit }) {
 				</button>
 			</form>
 			<div>
-				<img className="puggy" src={puggy} alt="puggy" />
+				<img className="landing_pet" src={puggy} alt="puggy" />
 			</div>
 		</div>
 	);
