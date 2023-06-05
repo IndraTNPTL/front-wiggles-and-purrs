@@ -2,9 +2,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// import Filter from "../Components/Filter";
+// import Filter from "../components/Filter";
 
-// import Sort from "../Components/Sort";
+// import Sort from "../components/Sort";
 
 function PageList() {
 	const [pets, setPets] = useState([]);

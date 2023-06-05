@@ -10,6 +10,7 @@ function About() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+	console.log("TEST");
 
 	return (
 		<div className="page-container">
