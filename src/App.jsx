@@ -11,10 +11,10 @@ import PageList from "./pages/PageList";
 import About from "./pages/About";
 import FoundAPetForm from "./pages/FoundAPetForm";
 
-// IMPORT COMPONENTS
-import Footer from "./Components/Footer";
-// import Filter from "./Components/Filter";
-// import Sort from "./Components/Sort";
+// IMPORT components
+import Footer from "./components/Footer";
+// import Filter from "./components/Filter";
+// import Sort from "./components/Sort";
 
 function App() {
 	const handleSubmit = async (e) => {
