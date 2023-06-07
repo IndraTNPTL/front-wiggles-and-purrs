@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
-
-// INSTALLING ROUTER
+import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
+import AuthContextWrapper from "../service/AuthContext";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
 	<React.StrictMode>
 		<Router>
-			<App />
+			<AuthContextWrapper>
+				<App />
+			</AuthContextWrapper>
 		</Router>
 	</React.StrictMode>
 );

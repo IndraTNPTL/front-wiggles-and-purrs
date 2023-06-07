@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 import landingPimg from "../assets/Adopt_a_pet_3.png";
 
 function LandingPage() {
+	// Automatic scroll to top when landing
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<div className="content-page-container">
 			<div className="hero-banner">
