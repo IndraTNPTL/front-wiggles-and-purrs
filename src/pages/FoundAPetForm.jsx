@@ -1,83 +1,129 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../service/AuthContext";
 
 import headerPic from "../assets/pug.jpeg";
 
 function FoundAPetForm() {
-  // Automatic scroll to top when landing
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+	const navigate = useNavigate();
 
-  const navigate = useNavigate();
+	// !MIGHT WON'T NEEDED
+	const { authenticateUser } = useContext(AuthContext);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+	// Automatic scroll to top when landing
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
-    const api = {
-      method: "post",
-      baseURL: "http://localhost:3000",
-      url: "api/found-a-pet",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: formData,
-    };
+	const [formData, setFormData] = useState({
+		name: "",
+		specie: "",
+		breed: "",
+		size: "",
+		color: "",
+	});
 
-    axios(api)
-      .then((response) => {
-        const jwt = response.data.token;
-        localStorage.setItem("token", jwt);
-        navigate("/submitted");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+	const [error, setError] = useState(null);
 
-  return (
-    <div className="content-page-container">
-      <div className="nav-btns"> </div>
-      <h1>🐾 I found a pet!</h1>
-      <img className="writeImg" src={headerPic} alt="picture" />
-      <form className="writeForm">
-        <label htmlFor="fileInput">
-          <i className="writeIcon fa-regular fa-square-plus"> Upload photos</i>
-        </label>
-        <input type="file" id="fileInput" style={{ display: "none" }} />
+	const handleSubmit = async (event) => {
+		event.preventDefault();
 
-        <label>Pet Name</label>
-        <input type="name" className="writeInput" placeholder="Enter name..." />
-        <label>Specie</label>
-        <input
-          type="specie"
-          className="writeInput"
-          placeholder="Dog, cat or hedgehog..."
-        />
-        <label>Breed</label>
-        <input
-          type="breed"
-          className="writeInput"
-          placeholder="Enter breed..."
-        />
-        <label>Size</label>
-        <input
-          type="size"
-          className="writeInput"
-          placeholder="Small, medium or Large..."
-        />
-        <label>Color</label>
-        <input
-          type="colorInfo"
-          className="writeInput"
-          placeholder="Enter color..."
-        />
-        <button className="writeSubmit">Submit</button>
-      </form>
-    </div>
-  );
+		try {
+			const response = await axios.post(
+				"http://localhost:3000/api/found-a-pet",
+				formData
+			);
+
+			if (response.data) {
+				navigate("/hello");
+			}
+		} catch (error) {
+			console.log(error);
+			setError(error.response.data.message);
+		}
+	};
+
+	return (
+		<div className="content-page-container">
+			<h1>I found a pet! 🐾 </h1>
+
+			<img className="writeImg" src={headerPic} alt="picture" />
+
+			<form className="writeForm" onSubmit={handleSubmit}>
+				{/* <label htmlFor="fileInput">
+					<i className="writeIcon fa-regular fa-square-plus">
+						{" "}
+						Upload photos
+					</i>
+				</label>
+				<input type="file" id="fileInput" style={{ display: "none" }} /> */}
+
+				<label>Pet Name</label>
+				<input
+					type="text"
+					className="landingInput"
+					placeholder="Enter pet name..."
+					value={formData.name}
+					onChange={(event) =>
+						setFormData({ ...formData, name: event.target.value })
+					}
+				/>
+
+				<label>Specie</label>
+				<input
+					type="text"
+					className="landingInput"
+					placeholder="dog, cat or hedgehog?"
+					value={formData.specie}
+					onChange={(event) =>
+						setFormData({ ...formData, specie: event.target.value })
+					}
+				/>
+
+				<label>Breed</label>
+				<input
+					type="text"
+					className="landingInput"
+					placeholder="Enter pet breed..."
+					value={formData.breed}
+					onChange={(event) =>
+						setFormData({ ...formData, breed: event.target.value })
+					}
+				/>
+
+				<label>Size</label>
+				<input
+					type="text"
+					className="landingInput"
+					placeholder="small, medium or large?"
+					value={formData.size}
+					onChange={(event) =>
+						setFormData({
+							...formData,
+							size: event.target.value,
+						})
+					}
+				/>
+
+				<label>Color</label>
+				<input
+					type="text"
+					className="landingInput"
+					placeholder="Enter pet color..."
+					value={formData.color}
+					onChange={(event) =>
+						setFormData({ ...formData, color: event.target.value })
+					}
+				/>
+				{error && <p className="error-message">{error}</p>}
+				<button className="writeSubmit" type="submit">
+					Submit
+				</button>
+			</form>
+		</div>
+	);
 }
 
 export default FoundAPetForm;

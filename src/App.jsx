@@ -22,27 +22,34 @@ import LoggedIn from "./components/LoggedIn";
 // import Sort from "./components/Sort";
 
 function App() {
-  const specie = "";
+	// const specie = "";
 
-  return (
-    <>
-      <Routes>
-        <Route element={<Footer />}>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+	return (
+		<>
+			<Routes>
+				<Route element={<Footer />}>
+					<Route path="/" element={<LandingPage />} />
+					<Route path="/signup" element={<Signup />} />
+					<Route path="/login" element={<Login />} />
 
-          <Route element={<LoggedIn />}>
-            <Route path="/hello" element={<Homepage />} />
-            <Route path="/pets/:specie" element={<PageList />} />
-            <Route path="/pets/specie/:petId" element={<PetDetails />} />
-            <Route path="/found-a-pet" element={<FoundAPetForm />} />
-            <Route path="/about" element={<About />} />
-          </Route>
-        </Route>
-      </Routes>
-    </>
-  );
+					<Route element={<LoggedIn />}>
+						<Route path="/hello" element={<Homepage />} />
+						<Route path="/pets/:specie" element={<PageList />} />
+						<Route
+							path="/pets/specie/:petId"
+							element={<PetDetails />}
+						/>
+						<Route
+							path="/found-a-pet"
+							element={<FoundAPetForm />}
+						/>
+
+						<Route path="/about" element={<About />} />
+					</Route>
+				</Route>
+			</Routes>
+		</>
+	);
 }
 
 export default App;
