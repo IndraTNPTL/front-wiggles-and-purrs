@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -52,9 +52,12 @@ function PetDetails() {
 					</p>
 					<p className="detail-description">{pets.description}</p>
 				</div>
-				<button className="btn-go-to-adopt-form">
-					Match with {pets.name}
-				</button>
+
+				<Link to={"/found-a-pet"}>
+					<button className="btn-go-to-adopt-form">
+						I want to adopt {pets.name}
+					</button>
+				</Link>
 			</div>
 		</>
 	);

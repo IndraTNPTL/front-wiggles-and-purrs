@@ -1,15 +1,17 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../service/AuthContext";
 
 import backArrow from "../assets/icons8-back-arrow.png";
 import catty from "../assets/Cat.png";
 
-import myApi from "../../service/api";
+// import myApi from "../../service/api";
 
 function Signup() {
 	const navigate = useNavigate();
+	const { authenticateUser } = useContext(AuthContext);
 
 	// Automatic scroll to top when landing
 	useEffect(() => {
@@ -27,22 +29,17 @@ function Signup() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
-		const api = {
-			method: "post",
-			baseURL: myApi.defaults.baseURL,
-			url: "auth/signup",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			data: formData,
-		};
-
 		try {
-			const response = await myApi(api);
+			const response = await axios.post(
+				"http://localhost:3000/auth/signup",
+				formData
+			);
+			// console.log(response);
 
 			if (response.data) {
-				const jwt = response.data.token;
+				const jwt = response.data.authToken;
 				localStorage.setItem("token", jwt);
+				await authenticateUser();
 				navigate("/hello");
 			} else {
 				setError(response.status);
@@ -67,7 +64,7 @@ function Signup() {
 				</Link>
 			</div>
 
-			<h1>🐾 Welcome</h1>
+			<h1>🐾 Create your account</h1>
 
 			<form className="landingForm" onSubmit={handleSubmit}>
 				<label>Username</label>
