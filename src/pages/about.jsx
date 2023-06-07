@@ -1,16 +1,18 @@
+import { useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+
+import { AuthContext } from "../../service/AuthContext";
+
 import aboutImg from "../assets/pug.jpeg";
 // import linkedinLogo from "../assets/linkedin-logo-linkedin-icon-transparent-free-png.webp";
 
-import { useEffect } from "react";
-
-// IMPORT Link
-import { Link } from "react-router-dom";
-
 function About() {
+	// Automatic scroll to top when landing
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
-	console.log("TEST");
+
+	const { isLoggedIn } = useContext(AuthContext);
 
 	return (
 		<div className="page-container">
