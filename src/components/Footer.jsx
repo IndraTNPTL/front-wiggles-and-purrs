@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 function Footer() {
 	return (
 		<>
-			<div className="page-container">
+			<div className="main-container">
 				<main>
 					<Outlet />
 				</main>

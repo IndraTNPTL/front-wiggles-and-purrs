@@ -31,7 +31,7 @@ function Signup() {
 
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/auth/signup",
+				"https://wiggles-and-purrs.netlify.app/auth/signup",
 				formData
 			);
 			// console.log(response);

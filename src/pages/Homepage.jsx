@@ -25,6 +25,7 @@ function Homepage() {
 			</p>
 
 			<Donation></Donation>
+
 			<h2 className="sub-title">
 				Meet the VIPs
 				<br />

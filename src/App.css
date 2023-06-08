@@ -24,11 +24,20 @@ body {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	justify-content: center;
+	/* justify-content: center; */
 	background-color: #f9f3ec;
 	padding: 1em 1em;
-	overflow: scroll;
 	min-height: 94vh;
+}
+
+.main-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #f9f3ec;
+	padding-bottom: 1em;
+	overflow: hidden;
 }
 
 .content-page-container {
@@ -36,6 +45,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 0 1em;
 }
 
 main {
@@ -106,10 +116,11 @@ p.intro {
 }
 
 .logo {
-	height: 2em;
+	height: 14vh;
 	will-change: transform;
 	cursor: pointer;
 	transition: transform 0.3s ease-in-out;
+	padding: 0 0.7em;
 }
 
 .logo:hover {
@@ -179,6 +190,16 @@ button {
 	cursor: pointer;
 }
 
+.btn-logout {
+	background-color: rgb(192, 197, 255);
+	border: none;
+	color: #0a210f;
+	font-weight: 700;
+	cursor: pointer;
+	margin: 0;
+	font-size: 1em;
+}
+
 .btn-signup {
 	border: none;
 	background-color: #0a210f;
@@ -201,12 +222,11 @@ button {
 }
 
 .homepage-btns {
-	margin: 1.7em 0;
+	margin: 1.4em 0;
 	border-radius: 7px;
 	border: none;
 	text-align: center;
 	display: inline-block;
-	cursor: pointer;
 	width: 80vw;
 	height: 25vh;
 	background-position: center;
@@ -215,6 +235,7 @@ button {
 	color: #0a210f;
 	font-weight: 900;
 	font-size: 2em;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .background {
@@ -313,9 +334,9 @@ label {
 }
 
 /* !FOUND A PET FORM */
-html {
+/* html {
 	background-color: rgb(249, 243, 236);
-}
+} */
 
 .write {
 	padding-top: 50px;
@@ -387,6 +408,19 @@ html {
 	cursor: pointer;
 }
 
+.dropDownInput {
+	height: 3em;
+	font-size: 1em;
+	margin-bottom: 2em;
+	width: 70vw;
+	background-color: white;
+	border: none;
+	padding-left: 1em;
+}
+
+.dropDownInput ::placeholder {
+	font-family: "Poppins", sans-serif;
+}
 /* !PAGELIST CSS */
 
 .cards-wrapper {
@@ -423,7 +457,7 @@ html {
 }
 
 .card-image > img {
-	height: 14em;
+	width: 19em;
 	object-fit: cover;
 }
 
@@ -527,6 +561,11 @@ html {
 	cursor: pointer;
 }
 
+.link-to-HP {
+	display: flex;
+	align-items: center;
+}
+
 /* !DONATION */
 .DonationWidget {
 	display: flex;
@@ -598,6 +637,10 @@ html {
 }
 
 /* !FAVORITES PAGE CSS */
+/* .favorite-img {
+	flex-grow: 1;
+} */
+
 .favorite-img > img {
 	width: 5em;
 	border-radius: 7px;
@@ -607,6 +650,12 @@ html {
 	width: 100%;
 	padding: 0.5em 3em;
 	border-spacing: 2.7em 3em;
+}
+
+tbody {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 tr {
@@ -627,6 +676,7 @@ tr {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	width: 19em;
 }
 
 .product {
@@ -698,7 +748,7 @@ tr {
 .btn-empty {
 	border: 1px solid #ff8552;
 	background-color: #ff8552;
-	border-radius: 3px;
+	border-radius: 7px;
 	color: white;
 	cursor: pointer;
 	font-family: inherit;
@@ -712,7 +762,7 @@ tr {
 .btn-go-browse {
 	border: 1px solid #002a32;
 	background-color: #002a32;
-	border-radius: 3px;
+	border-radius: 7px;
 	color: white;
 	cursor: pointer;
 	font-family: inherit;
@@ -721,12 +771,6 @@ tr {
 	text-align: center;
 	padding: 0.7em;
 	transition: all 0.3s ease-out;
-}
-
-.btn-go-shopping:hover {
-	background-color: #ff8552;
-	border: 1px solid #ff8552;
-	transition: 0.5s;
 }
 
 .empty-favorite {
@@ -742,4 +786,99 @@ tr {
 	font-weight: bold;
 	color: #ffaa5a;
 	cursor: pointer;
+}
+
+/* !NAV CSS */
+nav {
+	background-color: #fff;
+	width: 150%;
+}
+
+.nav-header {
+	display: flex;
+	align-items: center;
+}
+
+.btn-donate {
+	background-color: rgb(192, 197, 255);
+	border: none;
+	color: #0a210f;
+	font-weight: 700;
+}
+
+.bm-burger-button {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	width: 36px;
+	height: 30px;
+	left: 20px;
+	top: 20px;
+	margin-left: 20em;
+}
+.bm-overlay {
+	background-color: none;
+}
+
+.bm-burger-bars {
+	background: #0a210f;
+	margin-top: 1.5em;
+	opacity: 1;
+}
+
+.bm-cross {
+	background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+	position: fixed;
+	height: 100%;
+}
+
+.bm-menu {
+	background: #373a47;
+	padding: 2.5em 1.5em 0;
+	font-size: 1.15em;
+}
+
+.bm-item-list {
+	padding-left: 1em;
+}
+
+.bm-item {
+	margin-bottom: 10px;
+}
+
+.bm-menu {
+	background: white;
+	padding: 2.5em 1.5em 0;
+	font-size: 1.15em;
+}
+
+.menu-item {
+	color: #0a210f;
+	text-decoration: none;
+	margin: 0 0 1.7em;
+	font-weight: 700;
+}
+
+/* ! DASHBOARD ADMIN */
+.pet-detail {
+	background-color: #fff;
+	padding: 2em;
+}
+
+.buttons {
+	display: flex;
+	font-size: small;
+}
+
+.btn-admin {
+	margin-top: 20px;
+	cursor: pointer;
+	border: none;
+	color: white;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: rgb(192, 197, 255);
 }
