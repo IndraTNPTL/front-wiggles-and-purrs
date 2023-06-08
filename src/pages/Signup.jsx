@@ -31,7 +31,7 @@ function Signup() {
 
 		try {
 			const response = await axios.post(
-				"https://wiggles-and-purrs.netlify.app/auth/signup",
+				"https://wiggles-and-purrs.onrender.com/auth/signup",
 				formData
 			);
 			// console.log(response);

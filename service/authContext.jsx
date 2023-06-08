@@ -18,7 +18,7 @@ const AuthContextWrapper = ({ children }) => {
 			if (token) {
 				// Send the token, we expect a response with the user informations.
 				const response = await axios.get(
-					"https://wiggles-and-purrs.netlify.app/api/auth/verify",
+					"https://wiggles-and-purrs.onrender.com/api/auth/verify",
 					{
 						headers: {
 							Authorization: `Bearer ${token}`,
