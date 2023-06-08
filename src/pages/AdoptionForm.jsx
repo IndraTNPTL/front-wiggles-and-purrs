@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import service from "../../service/api";
 
 // import { Link } from "react-router-dom";
-import { AuthContext } from "../../service/AuthContext";
+import { AuthContext } from "../../service/authContext";
 
 // import headerPic from "../assets/adoptPet.jpeg";
 
