@@ -30,7 +30,7 @@ function Login() {
 
 		try {
 			const response = await axios.post(
-				"https://wiggles-and-purrs.netlify.app/auth/login",
+				"https://wiggles-and-purrs.onrender.com/auth/login",
 				formData
 			);
 			// console.log(response);
