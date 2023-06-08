@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../service/AuthContext";
+import { AuthContext } from "../../service/authContext";
 
 import backArrow from "../assets/icons8-back-arrow.png";
 import catty from "../assets/Cat.png";
