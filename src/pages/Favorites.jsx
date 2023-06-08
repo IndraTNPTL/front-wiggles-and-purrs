@@ -3,7 +3,10 @@ import { useEffect } from "react";
 // IMPORT Link
 import { Link } from "react-router-dom";
 
+import myApi from "../../service/api";
+
 function Favorites({ favoritePet, handleDelete, handleEmptyFavorite }) {
+	// Automatic scroll to top when landing
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -24,7 +27,7 @@ function Favorites({ favoritePet, handleDelete, handleEmptyFavorite }) {
 									{pet.name}
 								</td>
 
-								<td className="td-margin">{pet.location}</td>
+								{/* <td className="td-margin">{pet.location}</td> */}
 
 								<td className="delete">
 									<div className="action">
@@ -53,7 +56,7 @@ function Favorites({ favoritePet, handleDelete, handleEmptyFavorite }) {
 				</Link>
 
 				<button className="btn-empty" onClick={handleEmptyFavorite}>
-					Empty favorite list
+					Empty my list
 				</button>
 			</div>
 		</div>

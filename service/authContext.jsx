@@ -18,7 +18,7 @@ const AuthContextWrapper = ({ children }) => {
 			if (token) {
 				// Send the token, we expect a response with the user informations.
 				const response = await axios.get(
-					"http://localhost:3000/api/auth/verify",
+					"https://wiggles-and-purrs.netlify.app/api/auth/verify",
 					{
 						headers: {
 							Authorization: `Bearer ${token}`,
@@ -45,12 +45,19 @@ const AuthContextWrapper = ({ children }) => {
 		}
 	};
 
+	const logout = () => {
+		localStorage.removeItem("token");
+		setUser(null);
+		setIsLoggedIn(false);
+	};
+
 	const values = {
 		user,
 		setUser,
 		authenticateUser,
 		isLoggedIn,
 		isLoading,
+		logout,
 	};
 	return (
 		<AuthContext.Provider value={values}>{children}</AuthContext.Provider>

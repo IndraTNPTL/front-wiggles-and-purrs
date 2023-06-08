@@ -1,50 +1,80 @@
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
 import logo from "../assets/catndog.png";
 import { slide as Menu } from "react-burger-menu";
 
+// IMPORT OUTLET
+import { Outlet } from "react-router-dom";
+
+// IMPORT LOGOUT BTN
+import LogoutButton from "./LogoutButton";
+
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
-  };
+	// const location = useLocation();
+	const [menuOpen, setMenuOpen] = useState(false);
 
-  return (
-    <>
-      <nav>
-        <div className="nav-header">
-          <Link className="link-to-HP" to="/">
-            <img className="logo" src={logo} alt="logo" />
-          </Link>
-          <Link to="/">
-            <button className="btn-donate">Donate</button>
-          </Link>
-        </div>
+	function handleLinkClick() {
+		setMenuOpen(false);
+	}
 
-        <Menu
-          isOpen={menuOpen}
-          onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
-        >
-          <a id="home" className="menu-item" href="/">
-            ABOUT US
-          </a>
+	return (
+		<>
+			<nav>
+				<div className="nav-header">
+					<Link className="link-to-HP" to="/hello">
+						<img className="logo" src={logo} alt="logo" />
+					</Link>
+				</div>
 
-          <a id="about" className="menu-item" href="/about">
-            FOUND A PET
-          </a>
-          <a id="contact" className="menu-item" href="/contact">
-            DOG
-          </a>
-          <a id="contact" className="menu-item" href="/contact">
-            CAT
-          </a>
-          <a id="contact" className="menu-item" href="/contact">
-            HEDGEHOG
-          </a>
-        </Menu>
-      </nav>
-    </>
-  );
+				<Menu
+					isOpen={menuOpen}
+					onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
+				>
+					<Link
+						className="menu-item"
+						to={"/found-a-pet"}
+						onClick={handleLinkClick}
+					>
+						I FOUND A PET!
+					</Link>
+					<Link
+						className="menu-item"
+						to={"/favorites"}
+						onClick={handleLinkClick}
+					>
+						❤️ MY FAVOURITES PETS
+					</Link>
+					<Link
+						className="menu-item"
+						to={"/pets/dog"}
+						onClick={handleLinkClick}
+					>
+						SEE DOGS
+					</Link>
+					<Link
+						className="menu-item"
+						to={"/pets/cat"}
+						onClick={handleLinkClick}
+					>
+						SEE CATS
+					</Link>
+					<Link
+						className="menu-item"
+						to={"/pets/hedgehog"}
+						onClick={handleLinkClick}
+					>
+						SEE HEDGEHOGS
+					</Link>
+
+					<LogoutButton></LogoutButton>
+				</Menu>
+			</nav>
+
+			<div className="page-container">
+				<Outlet />
+			</div>
+		</>
+	);
 }
 
 export default Navbar;
