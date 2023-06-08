@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import myApi from "../../service/api";
 
-function PageList() {
+function PageList({ handleAddToFavorite }) {
 	// Automatic scroll to top when landing
 	useEffect(() => {
 		window.scrollTo(0, 0);

@@ -24,6 +24,7 @@ function FoundAPetForm() {
 		size: "",
 		color: "",
 	});
+	console.log(formData);
 
 	const [error, setError] = useState(null);
 
@@ -37,7 +38,10 @@ function FoundAPetForm() {
 			);
 
 			if (response.data) {
-				navigate("/hello");
+				await authenticateUser();
+				navigate("/thank-you");
+			} else {
+				setError(response.status);
 			}
 		} catch (error) {
 			console.log(error);
@@ -118,9 +122,13 @@ function FoundAPetForm() {
 					}
 				/>
 				{error && <p className="error-message">{error}</p>}
-				<button className="writeSubmit" type="submit">
-					Submit
-				</button>
+				<div className="go-to-auth-ctas">
+					<div className="go-to-signup">
+						<button className="btn-send-form" type="submit">
+							Send my application
+						</button>
+					</div>
+				</div>
 			</form>
 		</div>
 	);

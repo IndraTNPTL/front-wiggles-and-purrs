@@ -8,7 +8,7 @@ import myApi from "../../service/api";
 
 import React from "react";
 
-function PetDetails() {
+function PetDetails({ handleAddToFavorite }) {
 	// Automatic scroll to top when landing
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -16,6 +16,7 @@ function PetDetails() {
 
 	const [petDetails, setPetDetails] = useState([]);
 	const [pets, setPets] = useState([]);
+	const [users, setUsers] = useState([]);
 	const { petId } = useParams();
 
 	useEffect(() => {
@@ -35,17 +36,17 @@ function PetDetails() {
 		<>
 			<div className="content-page-container">
 				<h1>
-					<span className="highlighted-blue">{pets.name} 🐾</span>
+					<span className="green">{pets.name} 🐾</span>
 				</h1>
 
 				<div className="detail-image">
 					<img src={pets.photo} />
 				</div>
 				<div className="detail-content">
+					<h5 className="detail-breed">{pets.breed}</h5>
 					<h5 className="detail-location">
 						Currently in {pets.location}
 					</h5>
-					<h5 className="detail-breed">{pets.breed}</h5>
 					<p className="detail-infos">
 						{pets.gender} • {pets.color} • {pets.rangeAge} •{" "}
 						{pets.size}
@@ -53,9 +54,27 @@ function PetDetails() {
 					<p className="detail-description">{pets.description}</p>
 				</div>
 
-				<Link to={"/found-a-pet"}>
+				<Link
+					to={{
+						path: "/adopt-a-pet",
+						state: { pet: pets, user: users },
+					}}
+				>
 					<button className="btn-go-to-adopt-form">
 						I want to adopt {pets.name}
+					</button>
+				</Link>
+
+				<Link
+					to={{
+						path: "/favorites",
+					}}
+				>
+					<button
+						className="btn-add-to-favorites"
+						onClick={() => handleAddToFavorite(pets)}
+					>
+						Add {pets.name} to favorites ❤️
 					</button>
 				</Link>
 			</div>

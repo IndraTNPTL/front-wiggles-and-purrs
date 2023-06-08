@@ -64,7 +64,7 @@ function Signup() {
 				</Link>
 			</div>
 
-			<h1>🐾 Create your account</h1>
+			<h1>🐾 Create an account</h1>
 
 			<form className="landingForm" onSubmit={handleSubmit}>
 				<label>Username</label>
