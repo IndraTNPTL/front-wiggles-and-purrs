@@ -748,7 +748,7 @@ tr {
 .btn-empty {
 	border: 1px solid #ff8552;
 	background-color: #ff8552;
-	border-radius: 7px;
+	border-radius: 3px;
 	color: white;
 	cursor: pointer;
 	font-family: inherit;
@@ -762,7 +762,7 @@ tr {
 .btn-go-browse {
 	border: 1px solid #002a32;
 	background-color: #002a32;
-	border-radius: 7px;
+	border-radius: 3px;
 	color: white;
 	cursor: pointer;
 	font-family: inherit;

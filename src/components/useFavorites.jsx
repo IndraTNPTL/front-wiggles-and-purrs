@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+// !NOT USED
 function useFavorites(initialState) {
 	const [favorite, setFavorite] = useState(() => {
 		const storedFavorite = localStorage.getItem("favorite");
