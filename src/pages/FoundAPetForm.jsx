@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { AuthContext } from "../../service/AuthContext";
+import { AuthContext } from "../../service/authContext";
 import service from "../../service/api";
 
 import headerPic from "../assets/pug.jpeg";
