@@ -37,10 +37,10 @@ function Signup() {
 			// console.log(response);
 
 			if (response.data) {
-				const jwt = response.data.authToken;
-				localStorage.setItem("token", jwt);
-				await authenticateUser();
-				navigate("/hello");
+				// 	const jwt = response.data.authToken;
+				// 	localStorage.setItem("token", jwt);
+				// await authenticateUser();
+				navigate("/login");
 			} else {
 				setError(response.status);
 			}
