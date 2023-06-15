@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
 
 body {
 	font-family: "Poppins", sans-serif;
@@ -27,13 +28,14 @@ body {
 	/* justify-content: center; */
 	background-color: #f9f3ec;
 	padding: 1em 1em;
-	min-height: 94vh;
+	min-height: 80vh;
 }
 
 .main-container {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+
 	justify-content: center;
 	background-color: #f9f3ec;
 	padding-bottom: 1em;
@@ -45,8 +47,17 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 1em;
+	padding: 1em 1em;
 }
+
+/* .content-page-container-logs {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1em 1em;
+	height: 94vh;
+} */
 
 main {
 	flex-grow: 1;
@@ -74,25 +85,40 @@ footer {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 2.7em;
 	color: #0a210f;
 	font-weight: 900;
-	margin: 1em 0;
+	margin: 0.5em 0;
 	text-align: center;
 	text-transform: capitalize;
+	font-family: "Bagel Fat One", cursive;
 }
 
 h1 span {
 	color: #ffaa5a;
 }
 
+.sub-h1 {
+	font-size: 2.1em;
+}
+
 h2 {
 	margin: 0.7em 0;
-	font-size: 1.2em;
-	font-weight: 600;
+	font-size: 1.1em;
+	font-weight: 500;
 	line-height: 2;
 	color: #0a210f;
 	text-align: center;
+}
+
+.font-styled {
+	font-family: "Bagel Fat One", cursive;
+	font-size: 1.4em;
+	margin: 0.2em;
+}
+
+.bold {
+	font-weight: 700;
 }
 
 p {
@@ -113,10 +139,11 @@ p.error-message {
 p.intro {
 	padding: 0 1em;
 	text-align: center;
+	line-height: 2;
 }
 
 .logo {
-	height: 14vh;
+	height: 17vh;
 	will-change: transform;
 	cursor: pointer;
 	transition: transform 0.3s ease-in-out;
@@ -128,8 +155,8 @@ p.intro {
 }
 
 button {
-	margin: 0.5em;
-	padding: 0.7em 2em;
+	margin: 0.7em;
+	padding: 0.9em 1.2em;
 	font-family: "Poppins", sans-serif;
 	font-size: 1.1em;
 	letter-spacing: 0.7px;
@@ -183,7 +210,7 @@ button {
 }
 
 .btn-login {
-	background-color: rgb(192, 197, 255);
+	background-color: #ffaa5a;
 	border: none;
 	color: #0a210f;
 	font-weight: 700;
@@ -198,6 +225,12 @@ button {
 	cursor: pointer;
 	margin: 0;
 	font-size: 1em;
+}
+
+.submit-found-pet {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .btn-signup {
@@ -219,11 +252,18 @@ button {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	text-decoration: none;
+}
+
+.VIP-section {
+	display: flex;
+	flex-direction: column;
+	/* margin-top: 4em; */
 }
 
 .homepage-btns {
 	margin: 1.4em 0;
-	border-radius: 7px;
+	border-radius: 4px;
 	border: none;
 	text-align: center;
 	display: inline-block;
@@ -268,7 +308,6 @@ button {
 
 .landingInput {
 	font-size: 1em;
-	/* letter-spacing: 1px; */
 	padding: 1em;
 	margin-bottom: 2em;
 	background-color: white;
@@ -279,6 +318,20 @@ button {
 
 .landingInput::placeholder {
 	font-family: "Poppins", sans-serif;
+}
+
+.bottom {
+	margin: 0;
+}
+
+#show-password {
+	margin: 0.7em 0 2em;
+	font-size: 0.7em;
+	color: #0a210f;
+}
+
+#show-password:active {
+	color: #0a210f;
 }
 
 .landingButton {
@@ -306,7 +359,7 @@ label {
 	font-size: 1em;
 	font-weight: bold;
 	color: #0a210f;
-	margin: 10px 0;
+	margin: 1em 0;
 }
 
 .landing_pet {
@@ -358,10 +411,10 @@ label {
 }
 
 .writeImg {
-	margin: 20px 20px 20px;
+	margin: 2em;
 	width: 70vw;
 	height: auto;
-	border-radius: 10px;
+	border-radius: 4px;
 	object-fit: cover;
 }
 
@@ -402,7 +455,7 @@ label {
 .btn-send-form {
 	border: none;
 	padding: 1.7em;
-	background-color: #ffaa5a;
+	background-color: #5e2bff;
 	font-weight: bold;
 	color: white;
 	cursor: pointer;
@@ -410,12 +463,13 @@ label {
 
 .dropDownInput {
 	height: 3em;
-	font-size: 1em;
+	font-size: 0.9em;
 	margin-bottom: 2em;
 	width: 70vw;
 	background-color: white;
 	border: none;
 	padding-left: 1em;
+	font-family: "Poppins";
 }
 
 .dropDownInput ::placeholder {
@@ -438,6 +492,7 @@ label {
 	flex-direction: column;
 	align-items: center;
 	padding: 1em;
+	margin-bottom: 1em;
 	border-radius: 7px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -478,6 +533,10 @@ label {
 	font-size: 0.8em;
 	color: #0a210f;
 }
+.card-specie {
+	font-size: 0.8em;
+	color: #0a210f;
+}
 
 .card-location {
 	color: #0a210f;
@@ -485,7 +544,7 @@ label {
 
 .card-infos {
 	font-size: 0.8em;
-	margin-top: 0.3em;
+	margin: 0.2em;
 }
 
 /* !SINGLE PAGE CSS */
@@ -514,7 +573,7 @@ label {
 
 .detail-content {
 	display: flex;
-	width: 80%;
+	width: 91%;
 	justify-content: center;
 	flex-direction: column;
 	margin: 0 1em;
@@ -538,10 +597,10 @@ label {
 .btn-go-to-adopt-form {
 	margin: 2em 0;
 	border: none;
-	padding: 1.7em;
-	background-color: #ffaa5a;
+	padding: 1em;
+	background-color: #5e2bff;
 	font-weight: bold;
-	color: #0a210f;
+	color: white;
 	cursor: pointer;
 }
 
@@ -575,7 +634,8 @@ label {
 }
 
 .sub-title {
-	font-size: 1.7em;
+	font-family: "Bagel Fat One", cursive;
+	font-size: 2em;
 	font-weight: 900;
 	line-height: normal;
 }
@@ -634,6 +694,8 @@ label {
 	justify-content: center;
 	flex-direction: column;
 	margin: 3em 0;
+	border-radius: 4px;
+	width: 22em;
 }
 
 /* !FAVORITES PAGE CSS */
@@ -781,10 +843,10 @@ tr {
 .btn-add-to-favorites {
 	margin: 0 0 2em 0;
 	border: none;
-	padding: 1.7em;
+	padding: 1em;
 	background-color: #0a210f;
 	font-weight: bold;
-	color: #ffaa5a;
+	color: white;
 	cursor: pointer;
 }
 
@@ -797,6 +859,7 @@ nav {
 .nav-header {
 	display: flex;
 	align-items: center;
+	height: 7em;
 }
 
 .btn-donate {
@@ -835,14 +898,8 @@ nav {
 	height: 100%;
 }
 
-.bm-menu {
-	background: #373a47;
-	padding: 2.5em 1.5em 0;
-	font-size: 1.15em;
-}
-
 .bm-item-list {
-	padding-left: 1em;
+	padding-left: 1.7em;
 }
 
 .bm-item {
@@ -851,18 +908,42 @@ nav {
 
 .bm-menu {
 	background: white;
-	padding: 2.5em 1.5em 0;
+	padding: 3em 1.5em 0 0;
 	font-size: 1.15em;
 }
 
 .menu-item {
 	color: #0a210f;
 	text-decoration: none;
-	margin: 0 0 1.7em;
+	margin: 0 0 1.9em;
 	font-weight: 700;
 }
 
-/* ! DASHBOARD ADMIN */
+.btn-bun-bun {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: #f9f3ec;
+}
+
+/* !ADMIN DASHBOOARD CSS */
+
+.btn-admin-go-to-dash {
+	display: block;
+	background-color: rgb(192, 197, 255);
+	border: none;
+	color: #0a210f;
+	font-weight: 700;
+	cursor: pointer;
+	margin: 0 0 1.7em;
+	font-size: 1em;
+}
+
+.dash-section {
+	margin-bottom: 1em;
+	width: 17em;
+}
+
 .pet-detail {
 	background-color: #fff;
 	padding: 2em;
@@ -881,4 +962,32 @@ nav {
 	border-radius: 10px;
 	padding: 10px;
 	background-color: rgb(192, 197, 255);
+}
+
+.dashboard-btns {
+	width: 100%;
+	border: none;
+	background-color: #5e2bff;
+	color: white;
+	font-weight: bold;
+}
+
+.btn-back-to-website {
+	width: 100%;
+	border: none;
+	background-color: #ff8552;
+	color: white;
+	font-weight: bold;
+}
+
+.countdown {
+	display: none;
+}
+
+.carrot {
+	width: 88vw;
+}
+
+.rabbit {
+	width: 50vw;
 }

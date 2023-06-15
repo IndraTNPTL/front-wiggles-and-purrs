@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../service/authContext";
+// import { AuthContext } from "../../service/authContext";
 
 import backArrow from "../assets/icons8-back-arrow.png";
 import catty from "../assets/Cat.png";
@@ -11,7 +11,7 @@ import catty from "../assets/Cat.png";
 
 function Signup() {
 	const navigate = useNavigate();
-	const { authenticateUser } = useContext(AuthContext);
+	// const { authenticateUser } = useContext(AuthContext);
 
 	// Automatic scroll to top when landing
 	useEffect(() => {
@@ -25,6 +25,20 @@ function Signup() {
 	});
 
 	const [error, setError] = useState(null);
+
+	const [showPassword, setShowPassword] = useState(false);
+	const [passwordTimeout, setPasswordTimeout] = useState(null);
+
+	const togglePasswordVisibility = () => {
+		setShowPassword(!showPassword);
+		if (!showPassword) {
+			setPasswordTimeout(
+				setTimeout(() => {
+					setShowPassword(false);
+				}, 700)
+			);
+		}
+	};
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -40,7 +54,7 @@ function Signup() {
 				// 	const jwt = response.data.authToken;
 				// 	localStorage.setItem("token", jwt);
 				// await authenticateUser();
-				navigate("/login");
+				navigate("/thank_you_for_joining");
 			} else {
 				setError(response.status);
 			}
@@ -60,11 +74,11 @@ function Signup() {
 					/>
 				</Link>
 				<Link to={"/login"}>
-					<button className="btn-login">Login instead ➜</button>
+					<button className="btn-login">I have an account ➜</button>
 				</Link>
 			</div>
 
-			<h1>🐾 Create an account</h1>
+			<h1 className="sub-h1">🐾 Create an account</h1>
 
 			<form className="landingForm" onSubmit={handleSubmit}>
 				<label>Username</label>
@@ -91,6 +105,25 @@ function Signup() {
 
 				<label>Password</label>
 				<input
+					type={showPassword ? "text" : "password"}
+					className="landingInput bottom"
+					placeholder="Enter your password..."
+					value={formData.password}
+					onChange={(event) => {
+						setFormData({
+							...formData,
+							password: event.target.value,
+						});
+					}}
+				/>
+				<Link
+					id="show-password"
+					to="#"
+					onClick={togglePasswordVisibility}
+				>
+					{showPassword ? "Hide password" : "Show password"}
+				</Link>
+				{/* <input
 					type="password"
 					className="landingInput"
 					placeholder="Enter your password..."
@@ -101,7 +134,7 @@ function Signup() {
 							password: event.target.value,
 						})
 					}
-				/>
+				/> */}
 				{error && <p className="error-message">{error}</p>}
 				<button className="btn-signup" type="submit">
 					Sign up

@@ -6,7 +6,7 @@ function LogoutButton() {
 
 	return (
 		<button className="btn-logout" onClick={logout}>
-			Logout 🦔
+			Logout
 		</button>
 	);
 }

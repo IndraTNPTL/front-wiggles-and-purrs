@@ -19,6 +19,7 @@ function FoundAPetForm() {
 	const [formData, setFormData] = useState({
 		photo: "",
 		name: "",
+		location: "",
 		specie: "",
 		breed: "",
 		size: "",
@@ -51,15 +52,25 @@ function FoundAPetForm() {
 
 	return (
 		<div className="content-page-container">
+			{/* <img className="writeImg" src={headerPic} alt="picture" /> */}
+
 			<h1>I found a pet! 🐾 </h1>
 
-			<img className="writeImg" src={headerPic} alt="picture" />
+			<h2>
+				You have just found a lonely pet and would like to make it
+				available for adoption?
+			</h2>
+			<h2>
+				You can ask for it to be listed in our database and thus allow
+				it to find a loving family as soon as possible!
+			</h2>
+			<h2>All you have to do is to fill up and submit the form below!</h2>
 
 			<form className="writeForm" onSubmit={handleSubmit}>
 				<label>Pet image URL</label>
 				<input
 					type="url"
-					className="dropDownInput"
+					className="landingInput"
 					placeholder="Enter image url..."
 					value={formData.photo}
 					onChange={(event) =>
@@ -70,11 +81,25 @@ function FoundAPetForm() {
 				<label>Pet Name</label>
 				<input
 					type="text"
-					className="dropDownInput"
+					className="landingInput"
 					placeholder="Enter pet name..."
 					value={formData.name}
 					onChange={(event) =>
 						setFormData({ ...formData, name: event.target.value })
+					}
+				/>
+
+				<label>Pet Location (ex: Paris)</label>
+				<input
+					type="text"
+					className="landingInput"
+					placeholder="Enter pet location..."
+					value={formData.location}
+					onChange={(event) =>
+						setFormData({
+							...formData,
+							location: event.target.value,
+						})
 					}
 				/>
 
@@ -145,7 +170,7 @@ function FoundAPetForm() {
 					</option>
 					<option value="Desert Hedgehog">Desert Hedgehog</option>
 					<option value="Somali Hedgehog">Somali Hedgehog</option>
-					<option value="Others">Others</option>
+					{/* <option value="Others">Others</option> */}
 				</select>
 
 				<label>Size</label>
@@ -170,7 +195,7 @@ function FoundAPetForm() {
 				<label>Color</label>
 				<input
 					type="text"
-					className="dropDownInput"
+					className="landingInput"
 					placeholder="Enter pet color..."
 					value={formData.color}
 					onChange={(event) =>

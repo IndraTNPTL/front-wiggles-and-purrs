@@ -1,10 +1,9 @@
-import axios from "axios";
+// import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import service from "../../service/api";
 
-// import { Link } from "react-router-dom";
 import { AuthContext } from "../../service/authContext";
 
 // import headerPic from "../assets/adoptPet.jpeg";
@@ -12,10 +11,10 @@ import { AuthContext } from "../../service/authContext";
 function AdoptionForm() {
 	const navigate = useNavigate();
 	const { id } = useParams();
-	console.log(id);
+	// console.log(id);
 
 	const { authenticateUser, user } = useContext(AuthContext);
-	console.log(user);
+	// console.log(user);
 
 	const [formData, setFormData] = useState({
 		petName: "",
@@ -59,7 +58,7 @@ function AdoptionForm() {
 		});
 	}
 
-	console.log(formData);
+	// console.log(formData);
 
 	const [error, setError] = useState(null);
 

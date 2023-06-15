@@ -15,7 +15,7 @@ function Footer() {
 				<footer>
 					<div className="copyright-section">
 						<p>
-							Made with ❤️ ©2023 All Right Reserved by{" "}
+							Made with ❤️ ©2023 All Rights Reserved by{" "}
 							<Link
 								className="footer-link"
 								to="https://www.linkedin.com/in/indratinotpatole/"

@@ -25,6 +25,20 @@ function Login() {
 
 	const [error, setError] = useState(null);
 
+	const [showPassword, setShowPassword] = useState(false);
+	const [passwordTimeout, setPasswordTimeout] = useState(null);
+
+	const togglePasswordVisibility = () => {
+		setShowPassword(!showPassword);
+		if (!showPassword) {
+			setPasswordTimeout(
+				setTimeout(() => {
+					setShowPassword(false);
+				}, 700)
+			);
+		}
+	};
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
@@ -60,13 +74,13 @@ function Login() {
 					/>
 				</Link>
 				<Link to={"/signup"}>
-					<button className="btn-signup">Sign Up instead ➜</button>
+					<button className="btn-signup">I want an account ➜</button>
 				</Link>
 			</div>
 
 			<h1>Hello back 🐾</h1>
 
-			<form className="landingForm" onSubmit={handleSubmit}>
+			<form className="landingForm" onSubmit={handleSubmit} method="post">
 				<label>Your Email</label>
 				<input
 					type="text"
@@ -80,6 +94,26 @@ function Login() {
 
 				<label>Your Password</label>
 				<input
+					type={showPassword ? "text" : "password"}
+					className="landingInput bottom"
+					placeholder="Enter your password..."
+					value={formData.password}
+					onChange={(event) => {
+						setFormData({
+							...formData,
+							password: event.target.value,
+						});
+					}}
+				/>
+				<Link
+					id="show-password"
+					to="#"
+					onClick={togglePasswordVisibility}
+				>
+					{showPassword ? "Hide password" : "Show password"}
+				</Link>
+
+				{/* <input
 					type="password"
 					className="landingInput"
 					placeholder="Enter your password..."
@@ -90,7 +124,8 @@ function Login() {
 							password: event.target.value,
 						})
 					}
-				/>
+				/> */}
+
 				{error && <p className="error-message">{error}</p>}
 				<button className="btn-login" type="submit">
 					Login

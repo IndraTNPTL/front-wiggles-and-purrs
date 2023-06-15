@@ -1,21 +1,32 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/catndog.png";
 import { slide as Menu } from "react-burger-menu";
+import { AuthContext } from "../../service/authContext";
 
 // IMPORT OUTLET
 import { Outlet } from "react-router-dom";
 
 // IMPORT LOGOUT BTN
 import LogoutButton from "./LogoutButton";
+// import ButtonAdminDash from "./ButtonAdminDash";
 
 function Navbar() {
-	// const location = useLocation();
+	const { user, isLoggedIn } = useContext(AuthContext);
 	const [menuOpen, setMenuOpen] = useState(false);
+	const navigate = useNavigate();
 
 	function handleLinkClick() {
 		setMenuOpen(false);
 	}
+
+	const handleClickDashboard = () => {
+		setMenuOpen(false);
+		if (isLoggedIn && user.role === "admin") {
+			navigate("/admin-dashboard");
+		}
+	};
 
 	return (
 		<>
@@ -32,40 +43,45 @@ function Navbar() {
 				>
 					<Link
 						className="menu-item"
-						to={"/found-a-pet"}
-						onClick={handleLinkClick}
-					>
-						I FOUND A PET!
-					</Link>
-					<Link
-						className="menu-item"
 						to={"/favorites"}
 						onClick={handleLinkClick}
 					>
-						❤️ MY FAVOURITES PETS
+						❤️ My Favorites Pets
+					</Link>
+					<Link
+						className="menu-item"
+						to={"/found-a-pet"}
+						onClick={handleLinkClick}
+					>
+						📝 "I Found A Pet" Form
 					</Link>
 					<Link
 						className="menu-item"
 						to={"/pets/dog"}
 						onClick={handleLinkClick}
 					>
-						SEE DOGS
+						🐶 See Dogs
 					</Link>
 					<Link
 						className="menu-item"
 						to={"/pets/cat"}
 						onClick={handleLinkClick}
 					>
-						SEE CATS
+						🐱 See Cats
 					</Link>
 					<Link
 						className="menu-item"
 						to={"/pets/hedgehog"}
 						onClick={handleLinkClick}
 					>
-						SEE HEDGEHOGS
+						🦔 See Hedgehogs
 					</Link>
-
+					<button
+						className="btn-admin-go-to-dash"
+						onClick={handleClickDashboard}
+					>
+						Dashboard
+					</button>
 					<LogoutButton></LogoutButton>
 				</Menu>
 			</nav>
