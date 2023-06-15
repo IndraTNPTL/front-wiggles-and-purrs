@@ -22,8 +22,11 @@ function FoundAPetForm() {
 		location: "",
 		specie: "",
 		breed: "",
+		gender: "",
 		size: "",
+		rangeAge: "",
 		color: "",
+		description: "",
 	});
 	console.log(formData);
 
@@ -138,6 +141,7 @@ function FoundAPetForm() {
 					<option value="Pomeranian">Pomeranian</option>
 					<option value="Beagle">Beagle</option>
 					<option value="Dachshund">Dachshund</option>
+					<option value="Berger Belge">Berger Belge</option>
 					<option value="Pug">Pug</option>
 					<option value="Poodle">Poodle</option>
 					<option value="Bichon Frise">Bichon Frise</option>
@@ -173,6 +177,22 @@ function FoundAPetForm() {
 					{/* <option value="Others">Others</option> */}
 				</select>
 
+				<label>Gender</label>
+				<select
+					className="dropDownInput"
+					name="pets"
+					id="pet-select"
+					value={formData.gender}
+					onChange={(event) =>
+						setFormData({ ...formData, gender: event.target.value })
+					}
+				>
+					<option value="">--Please choose an option--</option>
+					<option value="Female">Female</option>
+					<option value="Male">Male</option>
+					<option value="Unknown">Unknown</option>
+				</select>
+
 				<label>Size</label>
 				<select
 					className="dropDownInput"
@@ -192,6 +212,28 @@ function FoundAPetForm() {
 					<option value="Large">Large</option>
 				</select>
 
+				<label>Range Age (approximately)</label>
+				<select
+					className="dropDownInput"
+					name="pets"
+					id="pet-select"
+					value={formData.rangeAge}
+					onChange={(event) =>
+						setFormData({
+							...formData,
+							rangeAge: event.target.value,
+						})
+					}
+				>
+					<option value="">--Please choose an option--</option>
+					<option value="Under 6 months">Under 6 months</option>
+					<option value="6 - 12 months">6 - 12 months</option>
+					<option value="1 - 2 years">1 - 2 years</option>
+					<option value="2 - 5 years">2 - 5 years</option>
+					<option value="5 - 7 years">5 - 7 years</option>
+					<option value="8 + years">8 + years</option>
+				</select>
+
 				<label>Color</label>
 				<input
 					type="text"
@@ -202,6 +244,21 @@ function FoundAPetForm() {
 						setFormData({ ...formData, color: event.target.value })
 					}
 				/>
+
+				<label>Short description</label>
+				<input
+					type="text"
+					className="landingInput"
+					placeholder="Enter a short description of the pet"
+					value={formData.description}
+					onChange={(event) =>
+						setFormData({
+							...formData,
+							description: event.target.value,
+						})
+					}
+				/>
+
 				{error && <p className="error-message">{error}</p>}
 				<div className="go-to-auth-ctas">
 					<div className="go-to-signup">

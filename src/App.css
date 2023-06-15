@@ -143,7 +143,7 @@ p.intro {
 }
 
 .logo {
-	height: 17vh;
+	height: 6em;
 	will-change: transform;
 	cursor: pointer;
 	transition: transform 0.3s ease-in-out;
@@ -985,7 +985,7 @@ nav {
 }
 
 .carrot {
-	width: 88vw;
+	width: 83vw;
 }
 
 .rabbit {

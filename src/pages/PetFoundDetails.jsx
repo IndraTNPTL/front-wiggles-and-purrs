@@ -59,6 +59,7 @@ function PetFoundDetails() {
 			} = response.data;
 
 			setFormData({
+				...formData,
 				petPhoto: photo || "",
 				petName: name || "",
 				petSpecie: specie || "",
@@ -91,12 +92,13 @@ function PetFoundDetails() {
 			};
 
 			const response = await service.put(
-				`https://wiggles-and-purrs.onrender.com/api/pets/${id}`,
+				`/api/pets/${formData.petId}`,
 				updatedFormData
 			);
 
 			if (response.data) {
 				await authenticateUser();
+				setFormData;
 				// Filter out the updated pet from the foundPets list
 				setFoundPets((prevFoundPets) =>
 					prevFoundPets.filter((pet) => pet._id !== id)
@@ -109,6 +111,14 @@ function PetFoundDetails() {
 			console.log(error);
 			setError(error.response.data.message);
 		}
+	};
+
+	const handleChange = (event) => {
+		const { name, value } = event.target;
+		setFormData((prevFormData) => ({
+			...prevFormData,
+			[name]: value,
+		}));
 	};
 
 	return (
@@ -150,12 +160,7 @@ function PetFoundDetails() {
 					className="landingInput"
 					placeholder="Pre-filled"
 					value={formData.petName}
-					onChange={(event) =>
-						setFormData({
-							...formData,
-							petName: event.target.value,
-						})
-					}
+					onChange={handleChange}
 				/>
 
 				<label>Pet Specie / pre-filled</label>
@@ -313,10 +318,7 @@ function PetFoundDetails() {
 				/> */}
 
 				<div className="submit-found-pet">
-					<button
-						className="btn-send-form"
-						onClick={handleUpdateAvailability}
-					>
+					<button className="btn-send-form">
 						Make Pet Available
 					</button>
 				</div>

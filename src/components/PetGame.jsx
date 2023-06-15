@@ -71,7 +71,6 @@ const PetGame = () => {
 
 	return (
 		<>
-			{/* <h1>Feed Me</h1> */}
 			{!showStats && (
 				<button
 					className="btn-bun-bun"
@@ -93,7 +92,7 @@ const PetGame = () => {
 								alt="Pet Animation"
 							/>
 						)}
-						<p className="countdown">{formatTime(countdown)}</p>
+						{/* <p className="countdown">{formatTime(countdown)}</p> */}
 					</p>
 				</div>
 			)}

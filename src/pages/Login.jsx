@@ -90,6 +90,7 @@ function Login() {
 					onChange={(event) =>
 						setFormData({ ...formData, email: event.target.value })
 					}
+					autoComplete="email" // Add the autocomplete attribute
 				/>
 
 				<label>Your Password</label>
@@ -104,6 +105,7 @@ function Login() {
 							password: event.target.value,
 						});
 					}}
+					autoComplete="current-password" // Add the autocomplete attribute
 				/>
 				<Link
 					id="show-password"

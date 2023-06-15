@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/catndog.png";
+
 import { slide as Menu } from "react-burger-menu";
 import { AuthContext } from "../../service/authContext";
 

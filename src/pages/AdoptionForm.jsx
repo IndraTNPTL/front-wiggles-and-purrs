@@ -66,10 +66,7 @@ function AdoptionForm() {
 		event.preventDefault();
 
 		try {
-			const response = await service.post(
-				"https://wiggles-and-purrs.onrender.com/api/adopt-a-pet",
-				formData
-			);
+			const response = await service.post("/api/adopt-a-pet", formData);
 
 			if (response.data) {
 				await authenticateUser();
