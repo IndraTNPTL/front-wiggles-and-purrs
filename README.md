@@ -57,7 +57,7 @@ Follow these steps to set up and run the Wiggles and Purrs mobile app on your lo
 ## Contributors
 This app was brought to life by the collaborative efforts of talented individuals during the Ironhack bootcamp project:
 - [Indra Tinot-Patole](https://github.com/IndraTNPTL)
-- [Crystine](https://github.com/CrystineKoh)
+- [Crystine Koh](https://github.com/CrystineKoh)
 
 ## Acknowledgements
 We extend our gratitude to the Ironhack bootcamp instructors and mentors for their guidance and support throughout the development of this project. Special thanks to our fellow classmates for their inspiration and encouragement.
